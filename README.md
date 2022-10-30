@@ -1,6 +1,7 @@
 ## Usage
 
 1. Organize or photos into multiple directories within a folder.
+   * There should be a single file `title` in the root folder which has an XML fragment which is used as the title.
    * There should be a single subfolder for each named group.
    * No nested subdirectories.
    * The image and video files should be named so that they are ordered when sorted by the [active collation](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_13_03).
@@ -9,6 +10,7 @@
 2. Copy the following files from this repository to the folder containing your subfolders:
    * `pictures.xhtml.foot`
    * `pictures.xhtml.head`
+   * `pictures.xhtml.prehead`
    * `generate.sh`
 3. In bash, run `./generate.sh`
 4. The results will be written to `pictures.xhtml`

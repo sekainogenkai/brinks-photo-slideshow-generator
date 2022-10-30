@@ -1,10 +1,11 @@
 #!/bin/sh
 n=pictures.xhtml
 newName="${n}.new"
-cat "${n}.head" > "${newName}"
+[ -f title ] || { echo "Missing file: title" >&2; exit 1; }
+cat "${n}.prehead" title "${n}.head" > "${newName}"
 lastId=home
 printf %s "<div id=\"${lastId}\"><div class=\"nav\">" >> "${newName}"
-trailer="<h1>Pictures</h1></div>"
+trailer="<h1>$(cat title)</h1></div>"
 for d in *; do
     [ -d "${d}" ] || continue
     [ -f "${d}/id" ] || continue
