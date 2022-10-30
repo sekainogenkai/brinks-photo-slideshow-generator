@@ -1,6 +1,6 @@
 #!/bin/sh
 n=pictures.xhtml
-newName="${n}.new"
+newName=".#${n}#"
 [ -f title ] || { echo "Missing file: title" >&2; exit 1; }
 cat "${n}.prehead" title "${n}.head" > "${newName}"
 lastId=home
