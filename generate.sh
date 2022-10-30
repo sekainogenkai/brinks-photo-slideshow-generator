@@ -1,8 +1,9 @@
 #!/bin/sh
 n=pictures.xhtml
 newName=".#${n}#"
+templatePrefix="${0%/*}/pictures.xhtml"
 [ -f title ] || { echo "Missing file: title" >&2; exit 1; }
-cat "${n}.prehead" title "${n}.head" > "${newName}"
+cat "${templatePrefix}.prehead" title "${templatePrefix}.head" > "${newName}"
 lastId=home
 printf %s "<div id=\"${lastId}\"><div class=\"nav\">" >> "${newName}"
 trailer="<h1>$(cat title)</h1></div>"
@@ -50,5 +51,5 @@ for d in *; do
     done
 done
 printf %s "</div>${trailer}" >> "${newName}"
-cat "${n}.foot" >> "${newName}"
+cat "${templatePrefix}.foot" >> "${newName}"
 mv "${newName}" "${n}"
