@@ -7,8 +7,8 @@
    * Each subfolder should have a file named `id` with an [XML ID](https://www.w3.org/TR/REC-xml/#id) which will be the programatic identifier for that group.
    * Each subfolder should have a file named `name` with an XML fragment which shown as the heading for that group.
 2. Copy the following files from this repository to the folder containing your subfolders:
-   * `brink-family-2021-christmas-pictures.xhtml.foot`
-   * `brink-family-2021-christmas-pictures.xhtml.head`
+   * `pictures.xhtml.foot`
+   * `pictures.xhtml.head`
    * `generate.sh`
 3. In bash, run `./generate.sh`
-4. The results will be written to `brink-family-2021-christmas-pictures.xhtml`
+4. The results will be written to `pictures.xhtml`

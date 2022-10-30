@@ -1,10 +1,10 @@
 #!/bin/sh
-n=brink-family-2021-christmas-pictures.xhtml
+n=pictures.xhtml
 newName="${n}.new"
 cat "${n}.head" > "${newName}"
 lastId=home
 printf %s "<div id=\"${lastId}\"><div class=\"nav\">" >> "${newName}"
-trailer="<h1>Brink Family 2021 Christmas Pictures</h1></div>"
+trailer="<h1>Pictures</h1></div>"
 for d in *; do
     [ -d "${d}" ] || continue
     [ -f "${d}/id" ] || continue
