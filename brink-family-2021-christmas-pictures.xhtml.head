@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Brink Family 2021 Christmas Pictures</title>
+    <style type="text/css"><![CDATA[
+          html {
+              background: black;
+              color: #999;
+          }
+          body, html {
+              padding: 0;
+              margin: 0;
+          }
+          body {
+              height: 100%;
+          }
+          a, a:visited, a:link {
+              color: #88aaff;
+          }
+          body > div {
+              display: none;
+              margin: 0;
+              padding: 0;
+          }
+          body > div:target {
+              display: flex;
+              flex-direction: column;
+              height: 100vh;
+          }
+          div.nav {
+              display: flex;
+              justify-content: space-between;
+          }
+          div.nav .prev {
+              justify-self: flex-start;
+          }
+          div.nav .next {
+              justify-self: flex-end;
+          }
+          img, video {
+              flex-grow: 1;
+              object-fit: contain;
+              height: 100%;
+          }
+      ]]></style>
+    <script><![CDATA[
+    (() => {
+        const onready = () => {
+            if (document.readyState === 'loading') return;
+            document.removeEventListener('readystatechange', onready);
+            // For some reason, querySelector('*:target') does not work early (e.g., readyState=interactive).
+            // So we have to manually check.
+            const calculatedTargetId = decodeURIComponent(location.href.split('#')[1] || '');
+            if (!calculatedTargetId || !document.getElementById(calculatedTargetId)) {
+                location.href = `${location.href.split('#')[0]}#home`;
+                // For some reason, the above is not enough to cause the view to update. Confused.
+                location.reload();
+            }
+        };
+        document.addEventListener('readystatechange', onready, false);
+        onready();
+    })();
+    window.addEventListener('keydown', e => {
+        switch (e.code) {
+        case 'ArrowLeft':
+        case 'KeyK': {
+            const result = document.querySelector('*:target a.prev');
+            if (result) {
+                result.click();
+                e.preventDefault();
+            }
+            break;
+        }
+        case 'ArrowRight':
+        case 'KeyJ': {
+            const result = document.querySelector('*:target a.next');
+            if (result) {
+                result.click();
+                e.preventDefault();
+            }
+            break;
+        }
+        }
+    }, false);
+    ]]></script>
+  </head>
+  <body>
